@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
+import android.widget.Toast;
 
 public class SmsReceiver extends BroadcastReceiver {
 
@@ -25,7 +26,7 @@ public class SmsReceiver extends BroadcastReceiver {
                 String messageBody = smsMessage.getMessageBody();
 
                 //Pass the message text to interface
-                mListener.messageReceived(messageBody);
+                mListener.messageReceived(messageBody, sender);
         }
 
     }
